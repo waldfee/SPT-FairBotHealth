@@ -16,7 +16,7 @@ public sealed record ModMetadata : AbstractModMetadata
     public override string Name { get; init; } = "Fair Bot Health";
     public override string Author { get; init; } = "waldfee";
     public override List<string>? Contributors { get; init; }
-    public override SemanticVersioning.Version Version { get; init; } = new("1.0.1");
+    public override SemanticVersioning.Version Version { get; init; } = new("1.0.2");
     public override SemanticVersioning.Range SptVersion { get; init; } = new("~4.0.0");
     public override List<string>? Incompatibilities { get; init; }
     public override Dictionary<string, SemanticVersioning.Range>? ModDependencies { get; init; }
@@ -61,13 +61,13 @@ public sealed class BossFairnessMod(
             
             foreach (var bodyPart in botType.BotHealth.BodyParts)
             {
-                SetAdjustedValue(bodyPart.Chest, playerHealth.Chest.Maximum * config.BodyPartMultipliers?.Chest ?? config.GlobalMultiplier ?? 1);
-                SetAdjustedValue(bodyPart.Head, playerHealth.Head.Maximum * config.BodyPartMultipliers?.Head ?? config.GlobalMultiplier ?? 1);
-                SetAdjustedValue(bodyPart.Stomach, playerHealth.Stomach.Maximum * config.BodyPartMultipliers?.Stomach ?? config.GlobalMultiplier ?? 1);
-                SetAdjustedValue(bodyPart.LeftLeg, playerHealth.LeftLeg.Maximum * config.BodyPartMultipliers?.LeftLeg ?? config.GlobalMultiplier ?? 1);
-                SetAdjustedValue(bodyPart.RightLeg, playerHealth.RightLeg.Maximum * config.BodyPartMultipliers?.RightLeg ?? config.GlobalMultiplier ?? 1);
-                SetAdjustedValue(bodyPart.LeftArm, playerHealth.LeftArm.Maximum * config.BodyPartMultipliers?.LeftArm ?? config.GlobalMultiplier ?? 1);
-                SetAdjustedValue(bodyPart.RightArm, playerHealth.RightArm.Maximum * config.BodyPartMultipliers?.RightArm ?? config.GlobalMultiplier ?? 1);
+                SetAdjustedValue(bodyPart.Chest, playerHealth.Chest.Maximum * (config.BodyPartMultipliers?.Chest ?? config.GlobalMultiplier ?? 1));
+                SetAdjustedValue(bodyPart.Head, playerHealth.Head.Maximum * (config.BodyPartMultipliers?.Head ?? config.GlobalMultiplier ?? 1));
+                SetAdjustedValue(bodyPart.Stomach, playerHealth.Stomach.Maximum * (config.BodyPartMultipliers?.Stomach ?? config.GlobalMultiplier ?? 1));
+                SetAdjustedValue(bodyPart.LeftLeg, playerHealth.LeftLeg.Maximum * (config.BodyPartMultipliers?.LeftLeg ?? config.GlobalMultiplier ?? 1));
+                SetAdjustedValue(bodyPart.RightLeg, playerHealth.RightLeg.Maximum * (config.BodyPartMultipliers?.RightLeg ?? config.GlobalMultiplier ?? 1));
+                SetAdjustedValue(bodyPart.LeftArm, playerHealth.LeftArm.Maximum * (config.BodyPartMultipliers?.LeftArm ?? config.GlobalMultiplier ?? 1));
+                SetAdjustedValue(bodyPart.RightArm, playerHealth.RightArm.Maximum * (config.BodyPartMultipliers?.RightArm ?? config.GlobalMultiplier ?? 1));
             }
         }
         
