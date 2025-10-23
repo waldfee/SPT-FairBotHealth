@@ -12,4 +12,10 @@
         <PackageReference Include="SPTarkov.DI" Version="4.0.1" />
         <PackageReference Include="SPTarkov.Server.Core" Version="4.0.1" />
     </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Config\config.jsonc">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
 </Project>

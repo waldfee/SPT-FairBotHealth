@@ -1,0 +1,15 @@
+﻿{
+  // use either GlobalMultiplier or BodyPartMultipliers
+  
+  "GlobalMultiplier": 1.0, // set to null if using BodyPartMultipliers
+  "BodyPartMultipliers": {
+    // if using BodyPartMultipliers, specify all of them
+    "Chest": null,
+    "Head": null,
+    "Stomach": null,
+    "LeftLeg": null,
+    "RightLeg": null,
+    "LeftArm": null,
+    "RightArm": null
+  }
+}
